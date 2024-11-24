@@ -13,14 +13,14 @@ import lombok.Data;
 public class CarEntity {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
-  private String name;
+  private String carName;
   private String brand;
   private String model;
-  private String year;
+  private String carYear;
   private String color;
   private String price;
-  private String description;
+  private String carDescription;
 
 }

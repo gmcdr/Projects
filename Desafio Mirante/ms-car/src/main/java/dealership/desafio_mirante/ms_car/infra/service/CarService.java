@@ -25,39 +25,38 @@ public class CarService {
     List<CarEntity> cars = carRepository.findAll();
     return cars.stream().map(car -> CarDTO.builder()
       .id(car.getId())
-      .name(car.getName())
+      .name(car.getCarName())
       .brand(car.getBrand())
       .model(car.getModel())
-      .year(car.getYear())
+      .year(car.getCarYear())
       .color(car.getColor())
       .price(car.getPrice())
-      .description(car.getDescription()).build()).collect(Collectors.toList());
+      .description(car.getCarDescription()).build()).collect(Collectors.toList());
   }
 
   public CarDTO findById(Long id) {
+    CarEntity car = carRepository.findById(id).orElseThrow();
     return CarDTO.builder()
-      .id(findById(id).getId())
-      .name(findById(id).getName())
-      .brand(findById(id).getBrand())
-      .model(findById(id).getModel())
-      .year(findById(id).getYear())
-      .color(findById(id).getColor())
-      .price(findById(id).getPrice())
-      .description(findById(id).getDescription()).build(); 
+      .name(car.getCarName())
+      .brand(car.getBrand())
+      .model(car.getModel())
+      .year(car.getCarYear())
+      .color(car.getColor())
+      .price(car.getPrice())
+      .description(car.getCarDescription()).build(); 
   }
 
   public CarDTO create(Car car){
     CarEntity entity = CarMapper.toEntity(car);
     carRepository.save(entity);
     return CarDTO.builder()
-      .id(entity.getId())
-      .name(entity.getName())
+      .name(entity.getCarName())
       .brand(entity.getBrand())
       .model(entity.getModel())
-      .year(entity.getYear())
+      .year(entity.getCarYear())
       .color(entity.getColor())
       .price(entity.getPrice())
-      .description(entity.getDescription()).build();
+      .description(entity.getCarDescription()).build();
   }
 
 }

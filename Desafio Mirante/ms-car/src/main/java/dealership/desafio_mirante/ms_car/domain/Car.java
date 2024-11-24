@@ -2,43 +2,47 @@ package dealership.desafio_mirante.ms_car.domain;
 
 public class Car {
 
+    public Car() {
+    
+    }
+
     private Long id;
-    private String name;
+    private String carName;
     private String brand;
     private String model;
-    private String year;
+    private String carYear;
     private String color;
     private String price;
-    private String description;
+    private String carDescription;
 
     private Car(Builder builder) {
         this.id = builder.id;
-        this.name = builder.name;
+        this.carName = builder.carName;
         this.brand = builder.brand;
         this.model = builder.model;
-        this.year = builder.year;
+        this.carYear = builder.carYear;
         this.color = builder.color;
         this.price = builder.price;
-        this.description = builder.description;
+        this.carDescription = builder.carDescription;
     }
 
     public static class Builder {
         private Long id;
-        private String name;
+        private String carName;
         private String brand;
         private String model;
-        private String year;
+        private String carYear;
         private String color;
         private String price;
-        private String description;
+        private String carDescription;
 
         public Builder id(Long id) {
             this.id = id;
             return this;
         }
 
-        public Builder name(String name) {
-            this.name = name;
+        public Builder carName(String carName) {
+            this.carName = carName;
             return this;
         }
 
@@ -52,8 +56,8 @@ public class Car {
             return this;
         }
 
-        public Builder year(String year) {
-            this.year = year;
+        public Builder carYear(String carYear) {
+            this.carYear = carYear;
             return this;
         }
 
@@ -67,8 +71,8 @@ public class Car {
             return this;
         }
 
-        public Builder description(String description) {
-            this.description = description;
+        public Builder carDescription(String carDescription) {
+            this.carDescription = carDescription;
             return this;
         }
 
@@ -85,12 +89,12 @@ public class Car {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getcarName() {
+        return carName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setcarName(String carName) {
+        this.carName = carName;
     }
 
     public String getBrand() {
@@ -109,12 +113,12 @@ public class Car {
         this.model = model;
     }
 
-    public String getYear() {
-        return year;
+    public String getcarYear() {
+        return carYear;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setcarYear(String carYear) {
+        this.carYear = carYear;
     }
 
     public String getColor() {
@@ -137,17 +141,17 @@ public class Car {
         this.price = newPrice;
     }
 
-    public String getDescription() {
-        return description;
+    public String getcarDescription() {
+        return carDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setcarDescription(String carDescription) {
+        this.carDescription = carDescription;
     }
 
     public void validate() {
-        if (this.name == null || this.name.isEmpty()) {
-            throw new IllegalArgumentException("Name is required");
+        if (this.carName == null || this.carName.isEmpty()) {
+            throw new IllegalArgumentException("carName is required");
         }
         if (this.brand == null || this.brand.isEmpty()) {
             throw new IllegalArgumentException("Brand is required");
@@ -155,8 +159,8 @@ public class Car {
         if (this.model == null || this.model.isEmpty()) {
             throw new IllegalArgumentException("Model is required");
         }
-        if (this.year == null || this.year.isEmpty()) {
-            throw new IllegalArgumentException("Year is required");
+        if (this.carYear == null || this.carYear.isEmpty()) {
+            throw new IllegalArgumentException("carYear is required");
         }
         if (this.color == null || this.color.isEmpty()) {
             throw new IllegalArgumentException("Color is required");
@@ -164,20 +168,20 @@ public class Car {
         if (this.price == null || this.price.isEmpty()) {
             throw new IllegalArgumentException("Price is required");
         }
-        if (this.description == null || this.description.isEmpty()) {
-            throw new IllegalArgumentException("Description is required");
+        if (this.carDescription == null || this.carDescription.isEmpty()) {
+            throw new IllegalArgumentException("carDescription is required");
         }
     }
 
-    public void validateYear() throws IllegalArgumentException {
-        int currentYear = java.time.Year.now().getValue();
+    public void validatecarYear() throws IllegalArgumentException {
+        int currentcarYear = java.time.Year.now().getValue();
         try {
-            int carYear = Integer.parseInt(this.year);
-            if (carYear > currentYear) {
+            int carcarYear = Integer.parseInt(this.carYear);
+            if (carcarYear > currentcarYear) {
                 throw new IllegalArgumentException("O ano do carro não pode ser maior que o ano atual.");
             }
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Ano inválido. O campo 'year' deve ser numérico.");
+            throw new IllegalArgumentException("Ano inválido. O campo 'carYear' deve ser numérico.");
         }
     } 
 

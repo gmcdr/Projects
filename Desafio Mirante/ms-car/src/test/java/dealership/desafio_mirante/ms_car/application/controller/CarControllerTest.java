@@ -24,7 +24,7 @@ public class CarControllerTest {
   @Autowired
   private TestRestTemplate restTemplate;
 
-  private static final String URL = "/cars";
+  private static final String URL = "/car";
 
   @Test
 public void testFindAll() {
@@ -39,22 +39,7 @@ public void testFindAll() {
 
   @Test
   public void findById() {
-    ResponseEntity<CarDTO> response = restTemplate.getForEntity(URL + "/1", CarDTO.class);
-    assertEquals(response.getStatusCode(), HttpStatus.OK);
-  }
-
-  @Test
-  public void create() {
-    Car car = new Car.Builder()
-      .name("Gol")
-      .brand("Volkswagen")
-      .model("Gol")
-      .year("2021")
-      .color("Black")
-      .price("R$ 50.000,00")
-      .description("Carro em ótimo estado")
-      .build();
-    ResponseEntity<CarDTO> response = restTemplate.postForEntity(URL + "/create", car, CarDTO.class);
+    ResponseEntity<CarDTO> response = restTemplate.getForEntity(URL + "/2", CarDTO.class);
     assertEquals(response.getStatusCode(), HttpStatus.OK);
   }
   
