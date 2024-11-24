@@ -144,4 +144,52 @@ public class Car {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public void validate() {
+        if (this.name == null || this.name.isEmpty()) {
+            throw new IllegalArgumentException("Name is required");
+        }
+        if (this.brand == null || this.brand.isEmpty()) {
+            throw new IllegalArgumentException("Brand is required");
+        }
+        if (this.model == null || this.model.isEmpty()) {
+            throw new IllegalArgumentException("Model is required");
+        }
+        if (this.year == null || this.year.isEmpty()) {
+            throw new IllegalArgumentException("Year is required");
+        }
+        if (this.color == null || this.color.isEmpty()) {
+            throw new IllegalArgumentException("Color is required");
+        }
+        if (this.price == null || this.price.isEmpty()) {
+            throw new IllegalArgumentException("Price is required");
+        }
+        if (this.description == null || this.description.isEmpty()) {
+            throw new IllegalArgumentException("Description is required");
+        }
+    }
+
+    public void validateYear() throws IllegalArgumentException {
+        int currentYear = java.time.Year.now().getValue();
+        try {
+            int carYear = Integer.parseInt(this.year);
+            if (carYear > currentYear) {
+                throw new IllegalArgumentException("O ano do carro não pode ser maior que o ano atual.");
+            }
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Ano inválido. O campo 'year' deve ser numérico.");
+        }
+    } 
+
+    public void validatePrice() throws IllegalArgumentException {
+        try {
+            double carPrice = Double.parseDouble(this.price);
+            if (carPrice <= 0) {
+                throw new IllegalArgumentException("O preço do carro deve ser maior que zero.");
+            }
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Preço inválido. O campo 'price' deve ser numérico.");
+        }
+    }    
+
 }

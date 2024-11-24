@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @org.springframework.web.bind.annotation.RestController
 @org.springframework.web.bind.annotation.RequestMapping("/cars")
 public class CarController {
+    
     private final CarService carService;
 
     public CarController(CarService carService) {
