@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-MsCarApplication<ms-car>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "dealership.desafio_mirante.ms_car.MsCarApplication",
+      "projectName": "ms-car",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

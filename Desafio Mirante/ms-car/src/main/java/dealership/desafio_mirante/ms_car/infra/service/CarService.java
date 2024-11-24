@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import dealership.desafio_mirante.ms_car.application.dto.CarDTO;
-import dealership.desafio_mirante.ms_car.domain.Car;
+import dealership.desafio_mirante.ms_car.infra.persistence.CarEntity;
 import dealership.desafio_mirante.ms_car.infra.repository.CarRepository;
 
 @Service
@@ -20,7 +20,7 @@ public class CarService {
 
   public List<CarDTO> findAll() {
 
-    List<Car> cars = carRepository.findAll();
+    List<CarEntity> cars = carRepository.findAll();
     return cars.stream().map(car -> CarDTO.builder()
       .id(car.getId())
       .name(car.getName())
@@ -29,9 +29,7 @@ public class CarService {
       .year(car.getYear())
       .color(car.getColor())
       .price(car.getPrice())
-      .description(car.getDescription())
-      .build()
-    ).collect(Collectors.toList());
+      .description(car.getDescription()).build()).collect(Collectors.toList());
   }
 
   public CarDTO findById(Long id) {
