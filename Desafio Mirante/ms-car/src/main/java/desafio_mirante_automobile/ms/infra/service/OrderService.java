@@ -113,4 +113,13 @@ public class OrderService {
             .map(BigDecimal::valueOf)
             .reduce(BigDecimal.valueOf(carPrice), BigDecimal::add);
     }
+
+    public List<OrderDTO> getAll() {
+        List<OrderEntity> orders = orderRepository.findAll();
+        List<OrderDTO> orderDTOs = new ArrayList<>();
+        for (OrderEntity order : orders) {
+            orderDTOs.add(toDTO(order));
+        }
+        return orderDTOs;
+    }
 }

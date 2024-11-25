@@ -8,6 +8,8 @@ import desafio_mirante_automobile.ms.application.dto.OrderDTO;
 import desafio_mirante_automobile.ms.application.dto.RequestDTO;
 import desafio_mirante_automobile.ms.infra.service.OrderService;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,7 +31,7 @@ public class OrderController {
   }
 
   @PostMapping("/all")
-  public String getAll(@RequestBody String entity) {
-      return entity;
+  public List<OrderDTO> getAll() {
+     return orderService.getAll();
   }
 }
