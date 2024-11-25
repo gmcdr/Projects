@@ -1,5 +1,7 @@
 package desafio_mirante_automobile.ms.application.dto;
 
+import java.math.BigDecimal;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class OrderDTO {
   
   CarDTO car;
-  double finalPrice;
+  BigDecimal finalPrice;
 
   public OrderDTO toEntity() {
     return OrderDTO.builder()
