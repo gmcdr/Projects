@@ -15,7 +15,7 @@ public class CarInfoDTO {
   private String model;
   private String caryear;
   private String color;
-  private String price;
+  private Double price;
   private String cardescription;
   
 }

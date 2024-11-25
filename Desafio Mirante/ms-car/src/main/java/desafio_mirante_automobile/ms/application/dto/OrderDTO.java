@@ -13,4 +13,11 @@ public class OrderDTO {
   
   CarDTO car;
   double finalPrice;
+
+  public OrderDTO toEntity() {
+    return OrderDTO.builder()
+        .car(this.car)
+        .finalPrice(this.finalPrice)
+        .build();
+  }
 }

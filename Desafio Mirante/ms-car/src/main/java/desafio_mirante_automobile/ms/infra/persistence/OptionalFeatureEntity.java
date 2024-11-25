@@ -20,5 +20,5 @@ public class OptionalFeatureEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String name;
-    private BigDecimal price;
+    private Double price;
 }
