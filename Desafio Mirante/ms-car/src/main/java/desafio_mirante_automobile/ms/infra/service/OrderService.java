@@ -48,6 +48,7 @@ public class OrderService {
           .finalPrice(calculateFinalPrice(prices, carInfo.getPrice()))
           .build();
       }
+      saveOrder(OrderDTO.builder().car(car).build());
     return null;
   }
 
