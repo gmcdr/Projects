@@ -43,12 +43,13 @@ public class OrderService {
             OptionalFeatureEntity optionalFeature = optionalFeatureRepository.findById(id).get();
             prices.add(optionalFeature.getPrice());
           }
-          return  OrderDTO.builder()
+          OrderDTO result =  OrderDTO.builder()
           .car(car)
           .finalPrice(calculateFinalPrice(prices, carInfo.getPrice()))
           .build();
+          saveOrder(result);
       }
-      saveOrder(OrderDTO.builder().car(car).build());
+      
     return null;
   }
 
