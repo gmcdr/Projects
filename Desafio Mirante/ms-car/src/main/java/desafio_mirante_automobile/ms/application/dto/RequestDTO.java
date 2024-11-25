@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CarDTO {
 
+public class RequestDTO {
+  private Long carId;
   private List<Long> optionalFeatures;
-  private CarInfoDTO carInfo;
 }

@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import desafio_mirante_automobile.ms.application.dto.CarInfoDTO;
+import desafio_mirante_automobile.ms.application.dto.OrderDTO;
+import desafio_mirante_automobile.ms.application.dto.RequestDTO;
 import desafio_mirante_automobile.ms.infra.service.OrderService;
 
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,9 +23,9 @@ public class OrderController {
       this.orderService = orderService;
   }
 
-  @PostMapping("/create/{id}")
-  public CarInfoDTO create(@PathVariable Long id) {
-      return orderService.createOrder(id);
+  @PostMapping("/create")
+  public OrderDTO create(@RequestBody RequestDTO dto) {
+      return orderService.createOrder(dto);
   }
 
   @PostMapping("/all")
