@@ -1,4 +1,4 @@
-package desafio_mirante_automobile.ms.application.controller;
+package desafio_mirante_automobile.ms.application.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

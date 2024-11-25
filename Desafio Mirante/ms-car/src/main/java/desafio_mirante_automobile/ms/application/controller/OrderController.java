@@ -3,6 +3,7 @@ package desafio_mirante_automobile.ms.application.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import desafio_mirante_automobile.ms.application.dto.CarInfoDTO;
 import desafio_mirante_automobile.ms.infra.service.OrderService;
 
 import org.springframework.web.bind.annotation.PathVariable;

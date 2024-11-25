@@ -2,6 +2,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MsApplication",
+      "request": "launch",
+      "mainClass": "desafio_mirante_automobile.ms.MsApplication",
+      "projectName": "ms"
+    },
+    {
+      "type": "java",
       "name": "MsCarApplication",
       "request": "launch",
       "mainClass": "dealership.desafio_mirante.ms_car.MsCarApplication",

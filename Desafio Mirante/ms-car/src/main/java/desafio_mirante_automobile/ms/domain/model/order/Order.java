@@ -1,6 +1,7 @@
 package desafio_mirante_automobile.ms.domain.model.order;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import desafio_mirante_automobile.ms.domain.model.car.Car;
 
@@ -8,10 +9,12 @@ public class Order {
 
     private Car car;
     private BigDecimal finalprice;
+    private LocalDateTime orderDate;
   
     public Order(Car car, BigDecimal finalprice) {
         this.car = car;
         this.finalprice = finalprice;
+        this.orderDate = LocalDateTime.now();
     }
 
     public Car getCar() {
@@ -28,6 +31,10 @@ public class Order {
 
     public void setFinalprice(BigDecimal finalprice) {
         this.finalprice = finalprice;
+    }
+
+    public LocalDateTime getOrderDate() {
+        return orderDate;
     }
 
     public void calulateFinalPrice() {

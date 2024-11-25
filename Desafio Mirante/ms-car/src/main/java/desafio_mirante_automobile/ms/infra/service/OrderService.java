@@ -3,7 +3,7 @@ package desafio_mirante_automobile.ms.infra.service;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import desafio_mirante_automobile.ms.application.controller.CarInfoDTO;
+import desafio_mirante_automobile.ms.application.dto.CarInfoDTO;
 import desafio_mirante_automobile.ms.infra.repository.OrderRepository;
 
 @Service
