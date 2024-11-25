@@ -18,7 +18,7 @@ public class OrderService {
 
   public CarInfoDTO createOrder(Long carCode) {
     RestTemplate restTemplate = new RestTemplate();
-    restTemplate.getForObject(URL + carCode, CarInfoDTO.class);
+    //restTemplate.getForObject(URL + carCode, CarInfoDTO.class);
     //CarInfoDTO carInfo = restTemplate.getForObject("http://localhost:8081/car/" + carCode, CarInfoDTO.class);
     return restTemplate.getForObject(URL + carCode, CarInfoDTO.class);
   }

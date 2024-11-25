@@ -8,25 +8,25 @@ public class CarMapper {
 
     public static CarEntity toEntity(Car car) {
         CarEntity entity = new CarEntity();
-        entity.setCarName(car.getcarName());
+        entity.setCarname(car.getcarName());
         entity.setBrand(car.getBrand());
         entity.setModel(car.getModel());
-        entity.setCarYear(car.getcarYear());
+        entity.setCaryear(car.getcarYear());
         entity.setColor(car.getColor());
         entity.setPrice(car.getPrice());
-        entity.setCarDescription(car.getcarDescription());
+        entity.setCardescription(car.getcarDescription());
         return entity;
     }
 
     public static Car toDomain(CarEntity entity) {
         return new Car.Builder()
-                .carName(entity.getCarName())
+                .carName(entity.getCarname())
                 .brand(entity.getBrand())
                 .model(entity.getModel())
-                .carYear(entity.getCarYear())
+                .carYear(entity.getCaryear())
                 .color(entity.getColor())
                 .price(entity.getPrice())
-                .carDescription(entity.getCarDescription())
+                .carDescription(entity.getCardescription())
                 .build();
     }
 }

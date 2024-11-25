@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Entity
 @Table(name = "car")
@@ -29,7 +28,7 @@ public class CarEntity {
     private BigDecimal price;
     private String description;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "car_id")
-    private List<OptionalFeatureEntity> optionalFeatures;
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "order_id")
+    private OrderEntity order;
 }

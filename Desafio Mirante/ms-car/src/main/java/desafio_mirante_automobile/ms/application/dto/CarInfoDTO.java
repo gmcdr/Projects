@@ -9,14 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CarInfoDTO {
-
-  private Long id;
-  private String name;
+  
+  private String carname;
   private String brand;
   private String model;
-  private String year;
+  private String caryear;
   private String color;
   private String price;
-  private String description;
+  private String cardescription;
   
 }

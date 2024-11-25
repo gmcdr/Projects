@@ -2,30 +2,30 @@ package desafio_mirante_automobile.ms.domain.model.valueobjects;
 
 public class CarInfo {
 
-  private String name;
+  private String carname;
   private String brand;
   private String model;
-  private String year;
+  private String caryear;
   private String color;
   private String price;
-  private String description;
+  private String cardescription;
 
-  public CarInfo(String name, String brand, String model, String year, String color, String price, String description) {
-    this.name = name;
+  public CarInfo(String carname, String brand, String model, String caryear, String color, String price, String cardescription) {
+    this.carname = carname;
     this.brand = brand;
     this.model = model;
-    this.year = year;
+    this.caryear = caryear;
     this.color = color;
     this.price = price;
-    this.description = description;
+    this.cardescription = cardescription;
   }
 
   public String getName() {
-    return name;
+    return carname;
   }
 
   public void setName(String name) {
-    this.name = name;
+    this.carname = name;
   }
 
   public String getBrand() {
@@ -45,11 +45,11 @@ public class CarInfo {
   }
 
   public String getYear() {
-    return year;
+    return caryear;
   }
 
   public void setYear(String year) {
-    this.year = year;
+    this.caryear = year;
   }
 
   public String getColor() {
@@ -69,11 +69,11 @@ public class CarInfo {
   }
 
   public String getDescription() {
-    return description;
+    return cardescription;
   }
 
   public void setDescription(String description) {
-    this.description = description;
+    this.cardescription = description;
   }
 
 }

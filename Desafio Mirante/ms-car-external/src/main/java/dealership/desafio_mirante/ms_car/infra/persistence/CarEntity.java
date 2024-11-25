@@ -15,12 +15,12 @@ public class CarEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
-  private String carName;
+  private String carname;
   private String brand;
   private String model;
-  private String carYear;
+  private String caryear;
   private String color;
   private String price;
-  private String carDescription;
+  private String cardescription;
 
 }
